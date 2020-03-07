@@ -61,6 +61,11 @@ main {
   color: darkcyan;
 }
 
+.post_title{
+  padding: 1em 0 0.5em 0;
+  font-size: 2rem;
+}
+
 header {
   display: inline-block;
   background-color: rgb(69, 77, 90);
@@ -212,6 +217,7 @@ header {
 
 .posts_container{
   max-width: 1000px;
+  margin-top: 2em;
 }
 
 .sidebar_container{
@@ -369,7 +375,7 @@ a.loadMore:hover {
 }
 
 .post_container {
-  margin: 0 2em;
+  margin: 1em 2em;
   font-size: 1rem;
 }
 .post_container ul{
@@ -451,7 +457,7 @@ padding: 2em 0;
 }
 
 .social-button {
-  display: block;
+  display: flex;
   font-size: 2rem;
   opacity: 0.90;
   margin: 0 0.5em;
@@ -460,9 +466,15 @@ padding: 2em 0;
   width: 2em;
   height: 2em;
   transition: background-color 0.4s, height 0.4s, width 0.4s, color 0.4s, opacity 0.4s;
-  color: white;
-  background-color: rgb(71, 113, 177);
-  box-shadow: 0 3px 7px 0px black;
+  color:
+  white;
+  background-color:
+  rgb(71, 113, 177);
+  box-shadow: 0 3px 7px 0px
+  black;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 .social-button:focus{
   outline: 0;
@@ -492,7 +504,7 @@ padding: 2em 0;
   .homepage-content {
       display: flex;
       margin: 2em;
-      font-size: 1.15em;
+      font-size: 1.15rem;
       justify-content: space-between;
       font-family: "Public Sans";
       color: #151515;
@@ -670,7 +682,7 @@ padding: 2em 0;
   }
  
   .post_container {
-      margin: 0 15px;
+      margin: 5px 15px;
   }
 
   main,
@@ -678,9 +690,7 @@ padding: 2em 0;
   .control-nav {
       width: 100%;
   }
-  main {
-      padding: 1em 0;
-  }
+
 
   body {
       margin: 0;
@@ -743,6 +753,10 @@ padding: 2em 0;
       font-size: 1rem;
   }
   
+
+  .post_title{
+    font-size: 1.25rem;
+  }
 }
 
 @media only screen and (max-width: 300px) {

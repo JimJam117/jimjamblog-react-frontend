@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 const Footer = () => {
 
     const redirect = url => window.location = url;
@@ -7,12 +9,12 @@ const Footer = () => {
     return (
         <footer>
             <div className="footer-buttons">
-            <button aria-label="Github" onClick={() => redirect("https://github.com/JimJam117")} type="button" className="social-button social-button-github">
+            <Link to="/github" aria-label="Github"  type="button" className="social-button social-button-github">
                 <i className="fab fa-github"></i>
-            </button>
-            <button aria-label="Contact" onClick={() => redirect("/contact")} type="button" className="social-button" name="button">
+            </Link>
+            <Link to="contact" aria-label="Contact" type="button" className="social-button" name="button">
                 <i className="fas fa-envelope"></i>
-            </button>
+            </Link>
             </div>
 
             <div className="footer-email">jamessparrow101@googlemail.com</div>
