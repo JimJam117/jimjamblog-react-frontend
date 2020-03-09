@@ -1,2 +1,2 @@
 ## Jimjamblog React Frontend
-The frontend react app for my website. 
+The frontend app for my website. Takes information from the backend and renders it in react with react router to manage routing.
