@@ -19,22 +19,22 @@ const Contact = () => {
         <main>
             <div className="banner"><h1>Contact</h1></div>
 
-            <form action="/contact" method="post" enctype="multipart/form-data">
+            <form action="/contact" method="post" encType="multipart/form-data">
 
     <div className=" form-group row">
-        <input id="name" placeholder="Name" type="name" className="form-control @error('name') is-invalid @enderror"
+        <input id="name" placeholder="Name" type="name" className="form-control"
             name="name" onChange={(e) => setName(e.target.value)} value={name} required />
     </div>
 
     <div className=" form-group row">
-        <input id="email" type="email" placeholder="Email" className="form-control @error('email') is-invalid @enderror"
+        <input id="email" type="email" placeholder="Email" className="form-control"
             name="email" onChange={(e) => setEmail(e.target.value)} value={email} required />
     </div>
 
 
     <div className=" form-group row">
-        <textarea placeholder="Message" className="form-control @error('body') is-invalid @enderror" type="text"
-            name="body" rows="8" onChange={(e) => setBody(e.target.value)}>{body}</textarea>
+        <textarea placeholder="Message" className="form-control" type="text"
+            name="body" rows="8" onChange={(e) => setBody(e.target.value)} value={body}></textarea>
     </div>
 
     <div className="form-group row mb-0">

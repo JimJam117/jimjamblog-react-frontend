@@ -595,6 +595,13 @@ form {
     padding: 0;
 }
 
+.form-control{
+  width: 100%;
+  padding: 1em;
+  margin: 1em 0;
+  font-family: Public Sans;
+}
+
 
 @media only screen and (max-width: 650px) {
     form {
