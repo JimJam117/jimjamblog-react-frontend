@@ -548,6 +548,70 @@ padding: 2em 0;
   .homepage-gallery img {
       width: 100%;
   }
+
+  /* contact Page */
+
+  .captchaStyle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    resize: vertical;
+    font-family: "Open Sans";
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+
+}
+
+.submit-button {
+    background-color: #4771b1;
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1rem;
+    border: 2px solid #4771b1;
+    transition: 0.2s;
+    margin: 3rem 0;
+}
+
+.submit-button:hover {
+    background-color: #fff;
+    color: #4771b1;
+    border: 2px solid #4771b1;
+}
+
+.row {
+    padding: 0;
+}
+
+
+@media only screen and (max-width: 650px) {
+    form {
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .submit-button {
+        padding: 1em 2em;
+        font-size: initial;
+    }
+}
+
+
+/* Media queries */
+
   @media only screen and (max-width: 985px) {
       .homepage-content{
           flex-direction: column;
