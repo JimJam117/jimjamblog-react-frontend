@@ -56,6 +56,14 @@ main {
 
 }
 
+.single-container{
+  width: 100%;
+  display: flex;
+  margin-top: 1em;
+  font-size: 1rem;
+  justify-content: space-between;
+}
+
 .post_container a{
   text-decoration: none;
   color: darkcyan;
@@ -225,8 +233,8 @@ header {
 }
 
 .sidebar{
-  margin: 2em 0 0 2em;
-  padding: 2em 1em;
+  margin: 0 0 0 2em;
+  padding: 0em 1em 2em 1em;
   min-height: 300px;
   margin-bottom: 2em;
   background-color: #fff;
@@ -251,6 +259,7 @@ header {
   text-align: center;
   border: none;
   color: #222;
+  white-space: nowrap;
 }
 
 .sidebar_post:hover {
@@ -564,7 +573,7 @@ textarea {
     font-family: "Open Sans";
 }
 
-h1 {
+.banner h1 {
     text-align: center;
 }
 

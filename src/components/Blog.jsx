@@ -62,7 +62,7 @@ const Blog = () => {
                     <div className="posts_container">
                         {posts.map((post) => {
                             return (
-                                <a key={post.id} href="#" className="unlinkStyle">
+                                <a key={post.id} href={"/post/" + post.slug} className="unlinkStyle">
                                     <article className="section post_link">
                                         <img className="post_thumbnail" src={post.image} alt={post.title} />
 
