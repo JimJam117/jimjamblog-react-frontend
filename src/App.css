@@ -56,7 +56,7 @@ main {
 
 }
 
-.single-container{
+.container{
   width: 100%;
   display: flex;
   margin-top: 1em;
@@ -225,7 +225,6 @@ header {
 
 .posts_container{
   max-width: 1000px;
-  margin-top: 2em;
 }
 
 .sidebar_container{

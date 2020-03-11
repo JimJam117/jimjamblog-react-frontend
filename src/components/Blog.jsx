@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
+import Sidebar from './partials/Sidebar';
 
 const Blog = () => {
 
@@ -60,6 +61,7 @@ const Blog = () => {
 
         <main>
                 {loading ? "loading" : 
+                <div className="container">
                     <div className="posts_container">
                         {posts.map((post) => {
                             return (
@@ -76,6 +78,9 @@ const Blog = () => {
                                 </a>
                             )
                         })}
+                    </div>
+                
+                    <Sidebar />
                     </div>
                 }
 
