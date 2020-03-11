@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
@@ -65,22 +66,23 @@ const Blog = () => {
                     <div className="posts_container">
                         {posts.map((post) => {
                             return (
-                                <a key={post.id} href={"/post/" + post.slug} className="unlinkStyle">
+                                <Link key={post.id} to={"/post/" + post.slug} className="unlinkStyle">
                                     <article className="section post_link">
                                         <img className="post_thumbnail" src={"https://jsparrow.uk/" + post.image} alt={post.title} />
 
                                         <div className="post_container">
                                             <p className="timestamp">{post.created_at}</p>
                                             <h2 className="post_title">{post.title}</h2>
-                                            <p>{ReactHtmlParser(post.body.substring(0,200) + "...")}</p>
+                                                {/* Strip the body of tags and get the first 200 characters */}
+                                            <p>{(post.body.replace(/(<([^>]+)>)/ig,"").substring(0,200) + "...")}</p>
                                         </div>
                                     </article>
-                                </a>
+                                </Link>
                             )
                         })}
                     </div>
                 
-                    <Sidebar />
+                    <Sidebar recent={results.recent_post}/>
                     </div>
                 }
 

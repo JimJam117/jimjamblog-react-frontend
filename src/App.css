@@ -232,6 +232,7 @@ header {
 }
 
 .sidebar{
+  max-width: 300px;
   margin: 0 0 0 2em;
   padding: 0em 1em 2em 1em;
   min-height: 300px;
@@ -242,6 +243,7 @@ header {
 }
 
 .sidebar_post{
+  padding: 1em 3em;
   text-decoration: none;
   transition: 0.2s;
   display: flex;

@@ -12,13 +12,10 @@ export default function Single(props) {
     const [state, setState] = useState({})
     const [loading, setLoading] = useState(true);
 
-    console.log(props.match.params.id);
-
     const fetchItem = async () => { await fetch('https://jsparrow.uk/api/post/' + props.match.params.id, signal).then(async(response) => {
         const data = await response.json();    
         await setState(data);
         setLoading(false);
-        console.log(state.post);
         })
     }
 
@@ -47,7 +44,7 @@ export default function Single(props) {
                         </div>
 
 
-                        <Sidebar />
+                        <Sidebar recent={state.recent_post}/>
                 </div>
 
                 }
