@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Header from './partials/Header';
 import Footer from './partials/Footer';
-
+import ReactHtmlParser from 'react-html-parser'; 
 
 export default function Single(props) {
 
@@ -41,7 +41,7 @@ export default function Single(props) {
                             <div className="post_container">
                                 <div className="timestamp">{state.post.created_at}</div>
                                 <h1>{state.post.title}</h1>
-                                {state.post.body}
+                                {ReactHtmlParser(state.post.body)}
                             </div>
                         </div>
 

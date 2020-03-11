@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
 
@@ -64,12 +65,12 @@ const Blog = () => {
                             return (
                                 <a key={post.id} href={"/post/" + post.slug} className="unlinkStyle">
                                     <article className="section post_link">
-                                        <img className="post_thumbnail" src={post.image} alt={post.title} />
+                                        <img className="post_thumbnail" src={"https://jsparrow.uk/" + post.image} alt={post.title} />
 
                                         <div className="post_container">
                                             <p className="timestamp">{post.created_at}</p>
                                             <h2 className="post_title">{post.title}</h2>
-                                            <p>{post.body.substring(0,200) + "..."}</p>
+                                            <p>{ReactHtmlParser(post.body.substring(0,200) + "...")}</p>
                                         </div>
                                     </article>
                                 </a>
