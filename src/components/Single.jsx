@@ -25,6 +25,15 @@ export default function Single(props) {
             controller.abort();
         };
     })
+
+    useEffect(() => {
+        if(state.post){
+            if (props.match.params.id !== state.post.slug) {
+                setLoading(true);
+            }
+        }
+
+    })
     
 
     return (
@@ -32,8 +41,9 @@ export default function Single(props) {
             <Header />
 
             <main>
-                {loading ? "loading" :
                 <div className="container">
+                {loading ? "loading" :
+                
                         <div className="post">
                             <img className="post_thumbnail" src={"https://jsparrow.uk" + state.post.image} alt={state.post.title}></img>
                             <div className="post_container">
@@ -44,10 +54,10 @@ export default function Single(props) {
                         </div>
 
 
-                        <Sidebar recent={state.recent_post}/>
+                    } 
+                    {loading ? < Sidebar /> : <Sidebar recent={state.recent_post}/>}
+    
                 </div>
-
-                }
                 <Footer />
             </main>
         </div>
