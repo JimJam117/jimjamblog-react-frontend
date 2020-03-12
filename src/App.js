@@ -3,6 +3,7 @@ import './App.css';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+
 import Home from './components/Home';
 import Blog from './components/Blog';
 import Portfolio from './components/Portfolio';
@@ -11,9 +12,12 @@ import Single from './components/Single';
 
 
 function App() {
+
+ 
+
   return (
     <div className="App">
-        <Router>
+        <Router basename="/">
         <Switch>
           <Route path="(/|/home)/" exact component={Home}/>
           <Route path="/portfolio" exact component={Portfolio}/>

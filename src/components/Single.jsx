@@ -51,12 +51,15 @@ export default function Single(props) {
                                 <h1>{state.post.title}</h1>
                                 {ReactHtmlParser(state.post.body)}
                             </div>
+
+                            <button className="btn readMore" onClick={props.history.goBack}>
+                                <i className="fas fa-arrow-left"></i> Go Back
+                            </button>
                         </div>
 
 
                     } 
                     {loading ? < Sidebar /> : <Sidebar recent={state.recent_post}/>}
-    
                 </div>
                 <Footer />
             </main>
