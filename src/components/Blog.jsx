@@ -16,16 +16,23 @@ const Blog = () => {
     const [results, setResults] = useState([]);
     const [posts, setPosts] = useState([]);
 
-    
-    // fetch("https://swapi.co/api/people")
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             setLoading(false);
-    //             setPosts(data.results);
-    //             console.log(posts);
-    //         });
+    // pagination state
+    const [currentPage, setCurrentPage] = useState();
+    const [lastPage, setLastPage] = useState();
 
-    const fetchItems = async (apiUrl = `https://www.jsparrow.uk/api/posts`) =>  {
+    // pagination function
+    const changePage = (pageToChangeTo) => {
+        if(pageToChangeTo < 1 || pageToChangeTo > lastPage){
+            console.log("Page to change to: " + pageToChangeTo + " is not within boundries");
+        }
+        else {
+            setCurrentPage(pageToChangeTo);
+            setLoading(true);
+        }
+    }
+
+
+    const fetchItems = async (apiUrl = `https://www.jsparrow.uk/api/posts?page=${currentPage}`) =>  {
         console.log("load");
                 await fetch(apiUrl)
                     .then(async (response) => {
@@ -42,7 +49,13 @@ const Blog = () => {
                         }
         
                         const data = await response.json();
+
+                        console.log(currentPage);
                         setResults(data);
+
+                        setCurrentPage(data.posts.current_page);
+                        setLastPage(data.posts.last_page);
+
                         setPosts(data.posts.data);
                         setLoading(false);
                 })
@@ -53,7 +66,7 @@ const Blog = () => {
         return () => {
             controller.abort();
         };
-    })
+    }, [loading])
     
 
     return (
@@ -80,6 +93,14 @@ const Blog = () => {
                                 </Link>
                             )
                         })}
+
+                        <button className="btn" onClick={() => changePage(currentPage - 1)}>Last Page</button>
+                        <button className="btn" onClick={() => changePage(currentPage + 1)}>Next Page</button>
+
+                        <br/>
+                        <br/>
+                        <p>Current Page: {currentPage}</p>
+                        <p>Last Page: {lastPage}</p>
                     </div>
                 
                     <Sidebar recent={results.recent_post}/>

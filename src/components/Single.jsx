@@ -9,7 +9,7 @@ export default function Single(props) {
     var controller = new AbortController();
     var signal = controller.signal;
 
-    const [state, setState] = useState({})
+    const [state, setState] = useState({});
     const [loading, setLoading] = useState(true);
 
     const fetchItem = async () => { await fetch('https://jsparrow.uk/api/post/' + props.match.params.id, signal).then(async(response) => {
@@ -24,7 +24,7 @@ export default function Single(props) {
         return () => {
             controller.abort();
         };
-    })
+    });
 
     useEffect(() => {
         if(state.post){
@@ -32,8 +32,7 @@ export default function Single(props) {
                 setLoading(true);
             }
         }
-
-    })
+    });
     
 
     return (
@@ -43,21 +42,18 @@ export default function Single(props) {
             <main>
                 <div className="container">
                 {loading ? "loading" :
-                
                         <div className="post">
                             <img className="post_thumbnail" src={"https://jsparrow.uk" + state.post.image} alt={state.post.title}></img>
                             <div className="post_container">
                                 <div className="timestamp">{state.post.created_at}</div>
                                 <h1>{state.post.title}</h1>
                                 {ReactHtmlParser(state.post.body)}
+
+                                <button className="btn readMore" onClick={props.history.goBack}>
+                                    <i className="fas fa-arrow-left"></i> Go Back
+                                </button>
                             </div>
-
-                            <button className="btn readMore" onClick={props.history.goBack}>
-                                <i className="fas fa-arrow-left"></i> Go Back
-                            </button>
                         </div>
-
-
                     } 
                     {loading ? < Sidebar /> : <Sidebar recent={state.recent_post}/>}
                 </div>

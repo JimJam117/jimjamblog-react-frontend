@@ -18,16 +18,19 @@ export default function Sidebar(props) {
                         </div>    
                     </Link>
                 </div>
-            : 
-                null;
+            : null;
     }
 
     return (
     <div className="sidebar">
         <h3>Links</h3>
         <ul style={{'listStyle': 'none'}}>
-            <li><a className="btn sidebar-btn" href="/github"><i className="fab fa-github"></i> Github</a></li>
-            <li><a className="btn sidebar-btn" href="/contact"><i className="fas fa-envelope-square"></i> Contact</a></li>
+            <li>
+                <a className="btn sidebar-btn" href="/github"><i className="fab fa-github"></i> Github</a>
+            </li>
+            <li>
+                <a className="btn sidebar-btn" href="/contact"><i className="fas fa-envelope-square"></i> Contact</a>
+            </li>
         </ul>
         {recentPost()}
     </div>
