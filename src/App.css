@@ -295,8 +295,9 @@ header {
   font-weight: 800;
 }
 
-
-
+.page-num{
+  margin-bottom: 1em;
+}
 
 .readMore {
   margin: 30px 0 15px 0;

@@ -77,6 +77,7 @@ const Blog = () => {
                 {loading ? "loading" : 
                 <div className="container">
                     <div className="posts_container">
+                    <p className="page-num">Page {currentPage}</p>
                         {posts.map((post) => {
                             return (
                                 <Link key={post.id} to={"/post/" + post.slug} className="unlinkStyle">
@@ -94,13 +95,20 @@ const Blog = () => {
                             )
                         })}
 
-                        <button className="btn" onClick={() => changePage(currentPage - 1)}>Last Page</button>
-                        <button className="btn" onClick={() => changePage(currentPage + 1)}>Next Page</button>
+                        {/* if the current page isn't 1, show last page button */}
+                        {currentPage !== 1 ?
+                            <button className="btn" onClick={() => changePage(currentPage - 1)}>Last Page</button> :
+                            null
+                        }
 
-                        <br/>
-                        <br/>
-                        <p>Current Page: {currentPage}</p>
-                        <p>Last Page: {lastPage}</p>
+                        {/* if the current page isn't equal to the last page, show next page button */}
+                        {currentPage !== lastPage ?
+                            <button className="btn" onClick={() => changePage(currentPage + 1)}>Next Page</button> :
+                            null
+                        }
+                        
+                        {/* <p>Current Page: {currentPage}</p>
+                        <p>Last Page: {lastPage}</p> */}
                     </div>
                 
                     <Sidebar recent={results.recent_post}/>
