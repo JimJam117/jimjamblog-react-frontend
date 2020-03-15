@@ -1,19 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {Link} from 'react-router-dom';
 
 import Header from './partials/Header';
+import Search from './partials/Search';
 import Footer from './partials/Footer';
 
 const Home = () => {
+
+    const [searchDisplay, setSearchDisplay] = useState(false);
+    const setDisplay = (input) => setSearchDisplay(input);
+
     return (
         <div className="main-container">
             <Header />
 
         <main>
-            <div className="banner"><h1>Welcome!</h1></div>
 
+            <Search display={searchDisplay} setDisplay={setDisplay}/>
             
+            {searchDisplay ? null : 
+            
+            <div>
+                    <div className="banner"><h1>Welcome!</h1></div>
+    
                     <div className="homepage-content">
                         <div>
                             <img className="homepage-profile-pic-top" src="/img/jimjam3.png" alt="Me" />
@@ -42,6 +52,10 @@ const Home = () => {
 
                         </div>
                     </div>
+            </div>
+
+
+            }
             
 
             <Footer />

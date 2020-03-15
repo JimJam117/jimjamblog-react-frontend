@@ -193,7 +193,7 @@ header {
   border: 1px solid #80808080;
   outline: none;
   color: black;
-  padding: 0 10px;
+  padding: 0 10px 0 15px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -209,18 +209,12 @@ header {
   border: solid 2px rgb(69, 77, 90);
   padding: 0px 13px;
   color: #fff;
-  height: 3em;
   left: 10px;
   transition: color 0.3s, background-color 0.3s, border 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.searchButton:hover {
-  border-color: dimgray;
-  background-color: dimgray;
-  color: #fff;
-
-}
-
 
 
 .posts_container{
@@ -579,7 +573,7 @@ textarea {
     text-align: center;
 }
 
-form {
+.contact-form {
     text-align: center;
     width: 50%;
     margin: auto;

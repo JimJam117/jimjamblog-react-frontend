@@ -9,6 +9,7 @@ import Blog from './components/Blog';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Single from './components/Single';
+import SearchResults from './components/SearchResults';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/portfolio" exact component={Portfolio}/>
           <Route path="/posts" exact component={Blog}/>
           <Route path="/contact" exact component={Contact}/>
+
+          {/* <Route path="/search/:query" component={SearchResults}/> */}
 
           <Route path="/post/:id" component={Single}/>
          </Switch>
